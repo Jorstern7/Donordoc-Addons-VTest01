@@ -17,6 +17,7 @@ body {
   color: #555;
   position: relative;
   -webkit-overflow-scrolling: touch;
+  background-color: #FAF9F7;
 }
 
 body.loading {
@@ -454,6 +455,183 @@ footer {
   background-color: #d7f0db;
   color: #37b24d;
 }
+
+.svc-grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 40px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.svc-card {
+  position: relative;
+  width: 30%;
+  height: 320px;
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.svc-icon {
+    width: 35px;
+    height: 35px;
+    color: #1a8d53 !important;
+}
+
+.svc-card * {
+  box-sizing: border-box;
+}
+
+.svc-front {
+  padding: 24px;
+  padding-bottom: 30px;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.svc-badge {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  background-color: #1a8d53;
+  color: white;
+  padding: 8px 16px 8px 24px;
+  font-weight: 500;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 12px 50%);
+}
+
+.svc-badge .svc-star { font-size: 14px; margin-bottom: 2px; }
+
+.svc-icon-box {
+  width: 56px;
+  height: 56px;
+  background-color: #EEEEEE;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.svc-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 16px;
+  margin-top: 30px;
+  letter-spacing: -0.5px;
+}
+
+.svc-action-btn {
+  color: #1a8d53;
+  font-weight: 500;
+  font-size: 22px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+.svc-action-btn:hover { opacity: 0.8; }
+
+
+.svc-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 10;
+  padding: 24px;
+  
+  transform: translateY(-120%);
+  transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.svc-card.is-open .svc-back {
+  transform: translateY(0%);
+}
+
+.svc-title-sm {
+  font-size: 22px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  line-height: 1.1;
+}
+
+.svc-short-description{
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    line-height: 1.7;
+}
+
+.svc-stats-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-bottom: 60px;
+  padding-top: 10px;
+}
+
+.svc-stat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.svc-stat-val {
+  color: #1a8d53;
+  font-weight: 500;
+  font-size: 18px;
+  min-width: 40px;
+  padding-top: 2px; 
+}
+
+.svc-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.svc-stat-label {
+  font-size: 15px;
+  color: #2d3436;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.svc-stat-year {
+  font-size: 12px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.svc-close-hint {
+  position: absolute;
+  bottom: 20px;
+  right: 24px;
+  font-size: 14px;
+  color: #999;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.svc-close-hint:hover { color: #2d3436; }
 
 #header-wrapper {
   transition: transform 0.5s ease, top 0.5s ease;

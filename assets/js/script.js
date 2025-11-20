@@ -319,50 +319,17 @@ function initSwiperAutoplayInView(swipers) {
   });
 }
 
-function initFlipCards() {
-  const flips = document.querySelectorAll(".flip");
-  if (!flips.length) return;
+function toggleSvcCard(element) {
+  const clickedCard = element.closest(".svc-card");
 
-  flips.forEach((flip) => {
-    const card = flip.querySelector(".card");
-    const learnMoreBtn = flip.querySelector(".learn-more-btn");
+  const wasOpen = clickedCard.classList.contains("is-open");
 
-    if (!learnMoreBtn) return;
-
-    learnMoreBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      resetOtherFlipCards(flips, card);
-      flipCard(card, learnMoreBtn);
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!flip.contains(e.target) && card.classList.contains("flipped")) {
-        resetCard(card, learnMoreBtn);
-      }
-    });
+  document.querySelectorAll(".svc-card").forEach((card) => {
+    card.classList.remove("is-open");
   });
 
-  function resetOtherFlipCards(allFlips, currentCard) {
-    allFlips.forEach((otherFlip) => {
-      const otherCard = otherFlip.querySelector(".card");
-      const otherBtn = otherFlip.querySelector(".learn-more-btn");
-      if (
-        otherCard !== currentCard &&
-        otherCard.classList.contains("flipped")
-      ) {
-        resetCard(otherCard, otherBtn);
-      }
-    });
-  }
-
-  function flipCard(card, btn) {
-    btn.style.opacity = "0";
-    setTimeout(() => card.classList.add("flipped"), 200);
-  }
-
-  function resetCard(card, btn) {
-    card.classList.remove("flipped");
-    if (btn) btn.style.opacity = "1";
+  if (!wasOpen) {
+    clickedCard.classList.add("is-open");
   }
 }
 
