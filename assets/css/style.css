@@ -419,6 +419,23 @@ footer {
   box-sizing: border-box;
 }
 
+.bullet-point {
+  min-width: 16px;
+  max-width: 16px;
+  min-height: 16px;
+  max-height: 16px;
+  background-color: #37b24d;
+  border-radius: 100%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+@media (max-width: 1199px) {
+  .svc-stats-list {
+    padding: 5% 0% 50% 0% !important;
+  }
+}
+
 @media (max-width: 991.98px) {
   .svc-grid-container {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -454,12 +471,7 @@ footer {
   }
 
   .svc-title-sm {
-    font-size: 20px !important;
-  }
-
-  .svc-stats-list {
-    padding-bottom: 50px !important;
-    padding-top: 8px !important;
+    font-size: 26px !important;
   }
 
   .svc-stat-item {
@@ -471,12 +483,22 @@ footer {
     min-width: 44px !important;
   }
 
-  .svc-stat-label {
-    font-size: 14px !important;
-  }
-
   .svc-stat-year {
     font-size: 12px !important;
+  }
+
+  .svc-title-sm {
+    text-align: center !important;
+    font-size: 23px !important;
+  }
+
+  .svc-stats-list {
+    padding: 10% 10% 30% 10% !important;
+  }
+}
+@media (max-width: 769px) {
+  .svc-stats-list {
+    padding: 10% 5% 50% 5% !important;
   }
 }
 
@@ -527,14 +549,13 @@ footer {
     font-size: 13px !important;
   }
   .svc-title-sm {
-    font-size: 18px !important;
+    font-size: 25px !important;
     margin-bottom: 10px !important;
     margin-top: 0px !important;
   }
 
   .svc-stats-list {
-    padding-bottom: 40px !important;
-    padding-top: 6px !important;
+    padding: 5% 15% 10% 15% !important;
   }
 
   .svc-stat-item {
@@ -547,10 +568,6 @@ footer {
     min-width: 36px !important;
   }
 
-  .svc-stat-label {
-    font-size: 13px !important;
-  }
-
   .svc-stat-year {
     font-size: 11px !important;
   }
@@ -559,6 +576,12 @@ footer {
     font-size: 13px !important;
     bottom: 16px !important;
     right: 16px !important;
+  }
+}
+
+@media (max-width: 370px) {
+  .svc-stats-list {
+    padding: 5% 5% 13% 5% !important;
   }
 }
 
@@ -657,10 +680,11 @@ footer {
 }
 
 .svc-title-sm {
-  font-size: 22px;
+  font-size: 27px;
   margin-bottom: 20px;
   margin-top: 0px;
   line-height: 1.1;
+  text-align: center;
 }
 
 .svc-short-description {
@@ -675,13 +699,12 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding-bottom: 60px;
-  padding-top: 10px;
+  padding: 5% 15% 20% 15%;
 }
 
 .svc-stat-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
 }
 
@@ -699,7 +722,7 @@ footer {
 }
 
 .svc-stat-label {
-  font-size: 15px;
+  font-size: 18px;
   color: #2d3436;
   font-weight: 500;
   line-height: 1.3;
