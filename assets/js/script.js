@@ -247,7 +247,6 @@ function initSwipers() {
   // Pricing swiper - disable autoplay by default
   const pricingSwiper = new Swiper(".pricing-swiper", {
     slidesPerView: 3,
-    spaceBetween: 100,
     loop: true,
     grabCursor: true,
     allowTouchMove: true,
@@ -263,9 +262,11 @@ function initSwipers() {
     },
     passiveListeners: true,
     breakpoints: {
-      0: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      992: { slidesPerView: 3 },
+      0: { slidesPerView: 1, spaceBetween: 20 },
+      576: { slidesPerView: 1, spaceBetween: 20 },
+      768: { slidesPerView: 2, spaceBetween: 20 },
+      992: { slidesPerView: 2, spaceBetween: 40 },
+      1200: { slidesPerView: 3, spaceBetween: 40 },
     },
   });
 

@@ -73,6 +73,13 @@ footer {
   gap: 20px;
 }
 
+.bullet-point {
+  min-height: 1.2rem;
+  min-width: 1.2rem;
+  border-radius: 100%;
+  background-color: green;
+}
+
 .no-scroll {
   overflow: hidden;
 }
@@ -410,7 +417,7 @@ footer {
 .svc-card {
   position: relative;
   width: 30%;
-  height: 320px;
+  height: 340px;
   background-color: #ffffff;
   border-radius: 24px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
@@ -452,6 +459,7 @@ footer {
   display: flex;
   align-items: center;
   gap: 8px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 12px 50%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 12px 50%);
 }
 
@@ -504,8 +512,12 @@ footer {
   background-color: #ffffff;
   z-index: 10;
   padding: 24px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   transform: translateY(-120%);
   transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
 }
 
 .svc-card.is-open .svc-back {
@@ -528,11 +540,11 @@ footer {
 
 .svc-stats-list {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  padding-bottom: 60px;
-  padding-top: 10px;
+  padding: 2rem 1rem;
+  gap: 10%;
 }
 
 .svc-stat-item {
@@ -579,6 +591,110 @@ footer {
 
 .svc-close-hint:hover {
   color: #2d3436;
+}
+
+/* Responsive layout for new Services cards */
+@media (max-width: 1199.98px) {
+  .svc-grid-container {
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .svc-card {
+    width: 45%;
+    height: 340px;
+  }
+
+  .svc-stats-list {
+  }
+
+  .svc-badge {
+    font-size: 22px;
+    padding: 6px 14px 6px 24px;
+  }
+
+  .svc-title {
+    font-size: 22px;
+    margin-top: 14px;
+    margin-bottom: 12px;
+  }
+
+  .svc-action-btn {
+    font-size: 18px;
+  }
+
+  .svc-title-sm {
+    /* font-size: 20px; */
+  }
+
+  .svc-short-description {
+    font-size: 16px;
+  }
+
+  .svc-stat-label {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .svc-grid-container {
+    padding: 20px 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .svc-card {
+    width: 100%;
+    max-width: 420px;
+    height: 310px;
+  }
+
+  .svc-badge {
+    font-size: 20px;
+    padding: 6px 12px 6px 20px;
+  }
+
+  .svc-title {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .svc-title-sm {
+    /* font-size: 18px; */
+  }
+
+  .svc-action-btn {
+    font-size: 16px;
+  }
+
+  .svc-short-description {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .svc-stat-label {
+    /* font-size: 13px; */
+  }
+
+  .svc-stat-list {
+    padding-bottom: 45px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .svc-grid-container {
+    padding: 10px 0;
+  }
+
+  .swiper-container {
+    padding: 0px 20px !important;
+  }
+
+  .svc-card {
+    max-width: 100%;
+    height: 300px;
+  }
 }
 
 #header-wrapper {
@@ -1408,15 +1524,19 @@ main .section-pricing .container:before {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(10%);
   width: calc(100% - var(--bs-gutter-x, 0.75rem) * 2);
   background-color: #d7f0db;
   height: 50%;
   border-radius: 0 0 100% 100%;
 }
+
+.checklist {
+  text-align: start;
+}
 main .section-pricing .container .swiper-container {
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 main .section-pricing .container .swiper-slide {
   height: auto;
@@ -1462,6 +1582,9 @@ main .section-pricing .price-card {
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 main .section-pricing .price-icon {
   width: 84px;
@@ -1482,7 +1605,7 @@ main .section-pricing .price-title {
 main .section-pricing .price {
   font-size: 64px;
   line-height: 1;
-  font-weight: 700;
+  font-weight: 900;
   color: #0b3d23;
   margin: 6px 0 8px;
 }
@@ -1519,10 +1642,12 @@ main .section-pricing .icon {
   height: 40px;
   display: block;
   color: #37b24d;
+  fill: #37b24d;
 }
 main .section-pricing .icon-lg {
   width: 56px;
   height: 56px;
+  color: #37b24d;
 }
 main .section-pricing .doctor__contact a {
   text-decoration: none;
@@ -2363,9 +2488,6 @@ main .blog-section .blog-card.blog-card--hidden {
   #header nav ul.dropdown-menu[data-bs-popper] {
     margin: 0;
   }
-  main .blog-section .blog-card .card-footer {
-    display: none !important;
-  }
   #header nav ul.dropdown-menu[data-bs-popper] li a {
     display: flex;
     justify-content: center;
@@ -2392,113 +2514,17 @@ main .blog-section .blog-card.blog-card--hidden {
     object-fit: cover;
     border-radius: 9px 0 0 9px;
   }
+  main .blog-section .card .card-body p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
   #header nav.navbar-light .navbar-toggler {
     width: 33px;
     height: 33px;
   }
-  /* blog */
-  main .blog-section .card .card-body {
-    gap: 10px;
-  }
-  main .blog-section .blog-card .card {
-    display: flex;
-    flex-direction: row;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 6px 18px rgba(0, 0, 0, 0.08);
-    height: 320px;
-  }
-  main .blog-section .blog-card .card .row {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin: 0;
-    height: 100%;
-  }
-  main .blog-section .blog-card .card .row .col-5 {
-    width: 50%;
-    padding: 0;
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-  main .blog-section .blog-card .card .row .col-7 {
-    width: 50%;
-    padding: 0;
-    flex: 0 0 50%;
-    max-width: 50%;
-    display: flex;
-    flex-direction: column;
-  }
-  main .blog-section .blog-card .card-img-top {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    border-radius: 0;
-    display: block;
-  }
-  main .blog-section .blog-card .card-body {
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0;
-    height: 100%;
-  }
-
-  main .blog-section .blog-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 500;
-    font-size: 15px;
-    color: #1e7128;
-    background: #e5f5eb;
-    border-radius: 999px;
-    padding: 0.3rem 0.8rem;
-    width: -moz-fit-content;
-    width: fit-content;
-    margin-bottom: 10px;
-  }
-
-  .blogpost--title {
-    font-size: 16px !important;
-    font-weight: bold;
-    color: #070c08;
-    margin: 0 0 8px;
-  }
-
-  main .blog-section .blog-meta {
-    color: #000;
-    font-weight: 400;
-    font-size: 1.2rem;
-    margin: 0 0 12px;
-  }
-  main .blog-section .blog-excerpt {
-    color: #000;
-    line-height: 1.6;
-    margin: 0 0 20px;
-    font-size: 15px !important;
-  }
-  main .blog-section .blog-read-more {
-    display: inline-flex;
-    align-items: center;
-    font-weight: 600;
-    color: #38ac5d;
-    text-decoration: none;
-    gap: 6px;
-  }
-  main .blog-section .blog-read-more svg {
-    transition: transform 0.15s ease;
-    color: #38ac5d;
-  }
-  main .blog-section .blog-read-more:hover svg {
-    transform: translateX(3px);
-  }
-  #footer .footer-section .heading-four {
-    text-align: left;
-  }
-
   #header nav.navbar-light .navbar-toggler span {
     width: 18px;
   }
@@ -2650,6 +2676,9 @@ main .blog-section .blog-card.blog-card--hidden {
   main .blog-section p.heading-four {
     text-align: center;
   }
+  main .blog-section .card .card-body {
+    padding-left: 0;
+  }
   main .blog-section .card .card-img-top {
     height: 100%;
     -o-object-fit: cover;
@@ -2659,8 +2688,8 @@ main .blog-section .blog-card.blog-card--hidden {
   main .blog-section .card .card-body p {
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 6;
-    line-clamp: 6;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
   }
   main .appointment-form-section p {
@@ -2680,7 +2709,105 @@ main .blog-section .blog-card.blog-card--hidden {
   #footer .site-footer .row {
     gap: 20px;
   }
-
+  main .blog-section .card .card-body {
+    gap: 10px;
+  }
+  main .blog-section .blog-card .card {
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 6px 18px rgba(0, 0, 0, 0.08);
+    min-height: 200px;
+  }
+  main .blog-section .blog-card .card .row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    height: 100%;
+  }
+  main .blog-section .blog-card .card .row .col-5 {
+    width: 50%;
+    padding: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  main .blog-section .blog-card .card .row .col-7 {
+    width: 50%;
+    padding: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+  main .blog-section .blog-card .card-img-top {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+  }
+  main .blog-section .blog-card .card-body {
+    padding: 22px 22px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0;
+    height: 100%;
+  }
+  main .blog-section .blog-card .card-footer {
+    display: none !important;
+  }
+  main .blog-section .blog-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #1e7128;
+    background: #e5f5eb;
+    border-radius: 999px;
+    padding: 0.5rem 1rem;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 10px;
+  }
+  main .blog-section .blog-card .card-body .blogpost--title {
+    margin: 10px 0 8px;
+  }
+  main .blog-section .blog-meta {
+    color: #070c08;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0 0 12px;
+  }
+  main .blog-section .blog-excerpt {
+    color: #080d09;
+    line-height: 1.6;
+    margin: 0 0 16px;
+    font-size: 1.3rem;
+  }
+  main .blog-section .blog-read-more {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    color: #38ac5d;
+    text-decoration: none;
+    gap: 6px;
+    margin-top: auto;
+  }
+  main .blog-section .blog-read-more svg {
+    transition: transform 0.15s ease;
+    color: #38ac5d;
+  }
+  main .blog-section .blog-read-more:hover svg {
+    transform: translateX(3px);
+  }
+  #footer .footer-section .heading-four {
+    text-align: left;
+  }
   main .doctor-section .card {
     width: 70%;
     margin: 0 auto;
