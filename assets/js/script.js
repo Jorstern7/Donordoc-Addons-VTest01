@@ -252,7 +252,7 @@ function initSwipers() {
     allowTouchMove: true,
     speed: 800, // Reduced from 3000
     autoplay: {
-      delay: 3000,
+      delay: 20000,
       disableOnInteraction: false,
       enabled: false, // Disabled by default
     },
@@ -881,11 +881,13 @@ function initPricingCards() {
     const checklistHtml = checklistItems
       .map(
         (item) =>
-          `<li>
+          `<li class="checklist-item">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
           ${checkmarkSvg}
         </svg>
-        ${item}
+        <span class="checklist-item-text">
+          ${item}
+        </span>
       </li>`
       )
       .join("");

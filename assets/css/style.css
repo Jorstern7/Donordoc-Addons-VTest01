@@ -74,6 +74,7 @@ footer {
 }
 
 .bullet-point {
+  margin-top: 2px;
   min-height: 1.2rem;
   min-width: 1.2rem;
   border-radius: 100%;
@@ -182,13 +183,11 @@ footer {
   border: none;
   color: #fff;
 }
-.btn.btn-default:hover,
-.btn.btn-default:active {
+.btn.btn-default:hover, .btn.btn-default:active {
   background: linear-gradient(to right, #2e9a43, #178f86);
   color: #fff;
 }
-.btn.btn-default::before,
-.btn.btn-default::after {
+.btn.btn-default::before, .btn.btn-default::after {
   content: "";
   position: absolute;
   height: 100%;
@@ -200,8 +199,7 @@ footer {
   color: #555;
   border: 3px solid transparent;
 }
-.btn.btn-outline:hover,
-.btn.btn-outline:active {
+.btn.btn-outline:hover, .btn.btn-outline:active {
   background-color: #ebf7ed;
   border-color: #b3b3b3;
   color: #b3b3b3;
@@ -209,8 +207,7 @@ footer {
 .btn.colored-border {
   border-color: #b3b3b3 !important;
 }
-.btn.no-effect:hover svg,
-.btn.no-effect:active svg {
+.btn.no-effect:hover svg, .btn.no-effect:active svg {
   transform: none !important;
   color: #b3b3b3;
 }
@@ -221,15 +218,11 @@ footer {
   transform: rotate(0);
   transition: color 0.3s ease, transform 0.3s ease;
 }
-.btn:hover svg,
-.btn:active svg {
+.btn:hover svg, .btn:active svg {
   transform: rotate(90deg);
   color: #b3b3b3;
 }
-.btn:active,
-.btn:focus,
-.btn:focus-visible,
-.btn:active {
+.btn:active, .btn:focus, .btn:focus-visible, .btn:active {
   outline: 0;
   box-shadow: none;
 }
@@ -277,10 +270,7 @@ footer {
   line-height: normal;
   border-radius: 9px;
 }
-.custom-popup:hover,
-.custom-popup:focus,
-.custom-popup:active,
-.custom-popup:focus-visible {
+.custom-popup:hover, .custom-popup:focus, .custom-popup:active, .custom-popup:focus-visible {
   box-shadow: 0 0 6px #37b24d;
   outline: none;
   transition: 0.5s all;
@@ -306,7 +296,7 @@ footer {
   width: 100%;
   height: 100%;
   -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
   background: rgba(55, 178, 77, 0);
   z-index: 1000;
   justify-content: center;
@@ -361,10 +351,7 @@ footer {
   line-height: normal;
   border-radius: 9px;
 }
-.custom-select:hover,
-.custom-select:focus,
-.custom-select:active,
-.custom-select:focus-visible {
+.custom-select:hover, .custom-select:focus, .custom-select:active, .custom-select:focus-visible {
   box-shadow: 0 0 6px #37b24d;
   outline: none;
   transition: 0.5s all;
@@ -417,7 +404,7 @@ footer {
 .svc-card {
   position: relative;
   width: 30%;
-  height: 340px;
+  height: 320px;
   background-color: #ffffff;
   border-radius: 24px;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
@@ -460,7 +447,7 @@ footer {
   align-items: center;
   gap: 8px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 12px 50%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 12px 50%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 12px 50%);
 }
 
 .svc-badge .svc-star {
@@ -512,12 +499,10 @@ footer {
   background-color: #ffffff;
   z-index: 10;
   padding: 24px;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  transform: translateY(-120%);
-  transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   flex-direction: column;
+  transform: translateY(-120%);
+  transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .svc-card.is-open .svc-back {
@@ -543,8 +528,8 @@ footer {
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem 1rem;
-  gap: 10%;
+  height: 100%;
+  padding: 30px 10px;
 }
 
 .svc-stat-item {
@@ -567,7 +552,7 @@ footer {
 }
 
 .svc-stat-label {
-  font-size: 15px;
+  font-size: 16px;
   color: #2d3436;
   font-weight: 500;
   line-height: 1.3;
@@ -593,110 +578,97 @@ footer {
   color: #2d3436;
 }
 
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checklist-item-text {
+  margin-top: 6px;
+}
+
 /* Responsive layout for new Services cards */
 @media (max-width: 1199.98px) {
   .svc-grid-container {
     padding: 30px 20px;
     gap: 20px;
   }
-
   .svc-card {
     width: 45%;
     height: 340px;
   }
-
-  .svc-stats-list {
-  }
-
   .svc-badge {
     font-size: 22px;
     padding: 6px 14px 6px 24px;
   }
-
   .svc-title {
     font-size: 22px;
     margin-top: 14px;
     margin-bottom: 12px;
   }
-
   .svc-action-btn {
     font-size: 18px;
   }
-
   .svc-title-sm {
     /* font-size: 20px; */
   }
-
   .svc-short-description {
     font-size: 16px;
   }
-
-  .svc-stat-label {
-    font-size: 14px;
+  main .section-pricing .price-icon {
+    scale: 0.8;
   }
 }
-
 @media (max-width: 767.98px) {
   .svc-grid-container {
     padding: 20px 10px;
     flex-direction: column;
     align-items: center;
   }
-
   .svc-card {
     width: 100%;
     max-width: 420px;
     height: 310px;
   }
-
   .svc-badge {
     font-size: 20px;
     padding: 6px 12px 6px 20px;
   }
-
   .svc-title {
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
   }
-
   .svc-title-sm {
     /* font-size: 18px; */
   }
-
   .svc-action-btn {
     font-size: 16px;
   }
-
   .svc-short-description {
     font-size: 15px;
     line-height: 1.6;
   }
-
   .svc-stat-label {
     /* font-size: 13px; */
   }
-
   .svc-stat-list {
     padding-bottom: 45px;
   }
 }
-
 @media (max-width: 575.98px) {
   .svc-grid-container {
     padding: 10px 0;
   }
-
   .swiper-container {
     padding: 0px 20px !important;
   }
-
   .svc-card {
     max-width: 100%;
     height: 300px;
   }
 }
-
 #header-wrapper {
   transition: transform 0.5s ease, top 0.5s ease;
 }
@@ -822,12 +794,10 @@ footer {
   background-color: #37b24d;
   transition: all 0.5s ease-in-out;
 }
-#header nav ul:not(.dropdown-menu) > li > a.active,
-#header nav ul:not(.dropdown-menu) > li > a:hover {
+#header nav ul:not(.dropdown-menu) > li > a.active, #header nav ul:not(.dropdown-menu) > li > a:hover {
   color: #37b24d;
 }
-#header nav ul:not(.dropdown-menu) > li > a.active::before,
-#header nav ul:not(.dropdown-menu) > li > a:hover::before {
+#header nav ul:not(.dropdown-menu) > li > a.active::before, #header nav ul:not(.dropdown-menu) > li > a:hover::before {
   width: 100%;
 }
 #header nav ul:not(.dropdown-menu) > li > a.btn {
@@ -842,7 +812,7 @@ footer {
 }
 #header nav .offcanvas {
   -webkit-backdrop-filter: blur(5px);
-  backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
   background-color: rgba(215, 240, 219, 0.8196078431);
   transition: transform 1s ease-in-out;
 }
@@ -1026,7 +996,7 @@ main .section-health .header-swiper img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 main .section-featured {
   padding: 50px 0 30px 0;
@@ -1061,7 +1031,7 @@ main .section-featured .swiper-slide a img {
   max-height: 100%;
   width: 100%;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
   filter: brightness(0);
   opacity: 50%;
   transition: all 0.3s ease-in-out;
@@ -1307,14 +1277,7 @@ main .services-section .flip .card .card-body.back .service-box-info .rating {
   border-top: 0;
   background-color: #d3f9d8;
 }
-main
-  .services-section
-  .flip
-  .card
-  .card-body.back
-  .service-box-info
-  .rating
-  svg {
+main .services-section .flip .card .card-body.back .service-box-info .rating svg {
   padding: 0;
   height: 20px;
   width: 20px;
@@ -1386,10 +1349,7 @@ main .services-section .flip .card .card-body .service-list div {
 main .services-section .flip .card .card-body .service-list div:last-child {
   border-bottom: none;
 }
-main .services-section .flip .card .card-body .service-list div:hover,
-main .services-section .flip .card .card-body .service-list div:active,
-main .services-section .flip .card .card-body .service-list div:focus,
-main .services-section .flip .card .card-body .service-list div:focus-visible {
+main .services-section .flip .card .card-body .service-list div:hover, main .services-section .flip .card .card-body .service-list div:active, main .services-section .flip .card .card-body .service-list div:focus, main .services-section .flip .card .card-body .service-list div:focus-visible {
   background-color: #37b24d;
   color: #fff;
 }
@@ -1479,10 +1439,7 @@ main .appointment-form-section .custom-form .form-select {
   color: #37b24d;
   transition: 0.5s all;
 }
-main .appointment-form-section .custom-form .form-control:hover,
-main .appointment-form-section .custom-form .form-control:focus,
-main .appointment-form-section .custom-form .form-control:active,
-main .appointment-form-section .custom-form .form-control:focus-visible,
+main .appointment-form-section .custom-form .form-control:hover, main .appointment-form-section .custom-form .form-control:focus, main .appointment-form-section .custom-form .form-control:active, main .appointment-form-section .custom-form .form-control:focus-visible,
 main .appointment-form-section .custom-form .form-select:hover,
 main .appointment-form-section .custom-form .form-select:focus,
 main .appointment-form-section .custom-form .form-select:active,
@@ -1492,7 +1449,7 @@ main .appointment-form-section .custom-form .form-select:focus-visible {
   transition: 0.5s all;
 }
 main .appointment-form-section .custom-form .btn-submit,
-main .appointment-form-section .custom-form input[type="submit"] {
+main .appointment-form-section .custom-form input[type=submit] {
   margin-top: 20px;
   background-color: #37b24d;
   color: #fff;
@@ -1505,7 +1462,7 @@ main .appointment-form-section .custom-form input[type="submit"] {
   transition: all 0.3s ease-in-out;
 }
 main .appointment-form-section .custom-form .btn-submit:hover,
-main .appointment-form-section .custom-form input[type="submit"]:hover {
+main .appointment-form-section .custom-form input[type=submit]:hover {
   background-color: #32a045;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 6px #37b24d;
@@ -1513,6 +1470,9 @@ main .appointment-form-section .custom-form input[type="submit"]:hover {
 main .section-pricing {
   padding: 50px 0;
   position: relative;
+}
+main .section-pricing .checklist {
+  text-align: start;
 }
 main .section-pricing .container {
   padding-top: 50px;
@@ -1524,19 +1484,15 @@ main .section-pricing .container:before {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(10%);
+  transform: translateX(-50%) translateY(12%);
   width: calc(100% - var(--bs-gutter-x, 0.75rem) * 2);
   background-color: #d7f0db;
   height: 50%;
   border-radius: 0 0 100% 100%;
 }
-
-.checklist {
-  text-align: start;
-}
 main .section-pricing .container .swiper-container {
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 46px;
+  padding-right: 46px;
 }
 main .section-pricing .container .swiper-slide {
   height: auto;
@@ -1582,9 +1538,6 @@ main .section-pricing .price-card {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 main .section-pricing .price-icon {
   width: 84px;
@@ -1599,13 +1552,13 @@ main .section-pricing .price-title {
   font-size: 2rem;
   line-height: 1.1;
   margin: 2px 0 8px;
-  font-weight: 800;
+  font-weight: 600;
   color: #0b1b13;
 }
 main .section-pricing .price {
   font-size: 64px;
   line-height: 1;
-  font-weight: 900;
+  font-weight: 600;
   color: #0b3d23;
   margin: 6px 0 8px;
 }
@@ -1642,7 +1595,6 @@ main .section-pricing .icon {
   height: 40px;
   display: block;
   color: #37b24d;
-  fill: #37b24d;
 }
 main .section-pricing .icon-lg {
   width: 56px;
@@ -1677,7 +1629,7 @@ main .doctor-section .card .card-body img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   aspect-ratio: 4/3;
   border-radius: 9px 0 0 9px;
 }
@@ -1788,10 +1740,7 @@ main .find-a-doc-section .findDocform .form-select {
   color: #37b24d;
   transition: 0.5s all;
 }
-main .find-a-doc-section .findDocform .form-control:hover,
-main .find-a-doc-section .findDocform .form-control:focus,
-main .find-a-doc-section .findDocform .form-control:active,
-main .find-a-doc-section .findDocform .form-control:focus-visible,
+main .find-a-doc-section .findDocform .form-control:hover, main .find-a-doc-section .findDocform .form-control:focus, main .find-a-doc-section .findDocform .form-control:active, main .find-a-doc-section .findDocform .form-control:focus-visible,
 main .find-a-doc-section .findDocform .form-select:hover,
 main .find-a-doc-section .findDocform .form-select:focus,
 main .find-a-doc-section .findDocform .form-select:active,
@@ -1801,7 +1750,7 @@ main .find-a-doc-section .findDocform .form-select:focus-visible {
   transition: 0.5s all;
 }
 main .find-a-doc-section .findDocform .btn-submit,
-main .find-a-doc-section .findDocform input[type="submit"] {
+main .find-a-doc-section .findDocform input[type=submit] {
   color: #fff;
   border: none;
   padding: 20px 40px;
@@ -1812,7 +1761,7 @@ main .find-a-doc-section .findDocform input[type="submit"] {
   transition: all 0.3s ease-in-out;
 }
 main .find-a-doc-section .findDocform .btn-submit:hover,
-main .find-a-doc-section .findDocform input[type="submit"]:hover {
+main .find-a-doc-section .findDocform input[type=submit]:hover {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 6px #37b24d;
 }
@@ -1893,7 +1842,7 @@ main .section-testimonial .card .card-body .circle-container .img-wrapper img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 main .section-testimonial .card .card-body h4 {
   font-size: 24px;
@@ -1927,10 +1876,7 @@ main .section-testimonial .swiper-pagination .swiper-pagination-bullet {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-main
-  .section-testimonial
-  .swiper-pagination
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+main .section-testimonial .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #37b24d;
   width: 40px;
   height: 40px;
@@ -1999,7 +1945,7 @@ main .blog-section .card .card-footer .post-author img {
   height: 60px;
   border-radius: 50%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   border: 2px solid #ddd;
 }
 main .blog-section .card .card-footer .post-author h6 {
@@ -2024,8 +1970,7 @@ main .blog-section .blog-card {
   transform: translateY(0);
   overflow: hidden;
   will-change: opacity, transform;
-  transition: max-height 0.8s ease-out, opacity 0.8s ease-out,
-    transform 0.8s ease-out;
+  transition: max-height 0.8s ease-out, opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 main .blog-section .blog-card.blog-card--hidden {
   max-height: 0;
@@ -2057,10 +2002,7 @@ main .blog-section .blog-card.blog-card--hidden {
   color: #37b24d;
   transition: 0.5s all;
 }
-#footer .footer-section #newsletterform .form-control:hover,
-#footer .footer-section #newsletterform .form-control:focus,
-#footer .footer-section #newsletterform .form-control:active,
-#footer .footer-section #newsletterform .form-control:focus-visible,
+#footer .footer-section #newsletterform .form-control:hover, #footer .footer-section #newsletterform .form-control:focus, #footer .footer-section #newsletterform .form-control:active, #footer .footer-section #newsletterform .form-control:focus-visible,
 #footer .footer-section #newsletterform .form-select:hover,
 #footer .footer-section #newsletterform .form-select:focus,
 #footer .footer-section #newsletterform .form-select:active,
@@ -2070,7 +2012,7 @@ main .blog-section .blog-card.blog-card--hidden {
   transition: 0.5s all;
 }
 #footer .footer-section #newsletterform .btn-submit,
-#footer .footer-section #newsletterform input[type="submit"] {
+#footer .footer-section #newsletterform input[type=submit] {
   background-color: #37b24d;
   color: #fff;
   border: none;
@@ -2083,7 +2025,7 @@ main .blog-section .blog-card.blog-card--hidden {
   transition: all 0.3s ease-in-out;
 }
 #footer .footer-section #newsletterform .btn-submit:hover,
-#footer .footer-section #newsletterform input[type="submit"]:hover {
+#footer .footer-section #newsletterform input[type=submit]:hover {
   background-color: #32a045;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 6px #37b24d;
@@ -2149,10 +2091,7 @@ main .blog-section .blog-card.blog-card--hidden {
   transition: 0.3s all;
   z-index: 1000;
 }
-#up-arrow:hover,
-#up-arrow:active,
-#up-arrow:focus,
-#up-arrow:focus-visible {
+#up-arrow:hover, #up-arrow:active, #up-arrow:focus, #up-arrow:focus-visible {
   background-color: #fff;
   border-color: #32a045;
   color: #32a045;
@@ -2290,7 +2229,7 @@ main .blog-section .blog-card.blog-card--hidden {
     font-size: 14px;
   }
   #footer .footer-section #newsletterform .btn-submit,
-  #footer .footer-section #newsletterform input[type="submit"] {
+  #footer .footer-section #newsletterform input[type=submit] {
     padding: 10px 5px;
     font-size: 14px;
   }
@@ -2511,7 +2450,7 @@ main .blog-section .blog-card.blog-card--hidden {
   main .blog-section .card .card-img-top {
     height: 100%;
     -o-object-fit: cover;
-    object-fit: cover;
+       object-fit: cover;
     border-radius: 9px 0 0 9px;
   }
   main .blog-section .card .card-body p {
@@ -2583,7 +2522,7 @@ main .blog-section .blog-card.blog-card--hidden {
   main .doctor-section .card .card-body img {
     border-radius: 9px 9px 0 0;
     -o-object-position: top;
-    object-position: top;
+       object-position: top;
   }
 }
 @media (max-width: 767.98px) {
@@ -2648,7 +2587,7 @@ main .blog-section .blog-card.blog-card--hidden {
     padding: 0;
   }
   main .find-a-doc-section .findDocform .btn-submit,
-  main .find-a-doc-section .findDocform input[type="submit"] {
+  main .find-a-doc-section .findDocform input[type=submit] {
     margin-top: 20px;
   }
   main .find-a-doc-section {
@@ -2682,7 +2621,7 @@ main .blog-section .blog-card.blog-card--hidden {
   main .blog-section .card .card-img-top {
     height: 100%;
     -o-object-fit: cover;
-    object-fit: cover;
+       object-fit: cover;
     border-radius: 9px 0 0 9px;
   }
   main .blog-section .card .card-body p {
@@ -2745,7 +2684,7 @@ main .blog-section .blog-card.blog-card--hidden {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-    object-fit: cover;
+       object-fit: cover;
     border-radius: 0;
     display: block;
   }
@@ -2815,7 +2754,7 @@ main .blog-section .blog-card.blog-card--hidden {
   main .doctor-section .card .card-body img {
     border-radius: 9px 9px 0 0;
     -o-object-position: top;
-    object-position: top;
+       object-position: top;
   }
   main .section-health {
     padding: 50px 0 50px 0;
@@ -2838,6 +2777,10 @@ main .blog-section .blog-card.blog-card--hidden {
   main .section-health .health-img-box .health-img.health-img--2 {
     height: 123.5px;
   }
+  main .section-pricing .container:before {
+    height: 20%;
+    transform: translateY(-18%) translateX(-50%);
+  }
 }
 @media (max-width: 576.98px) {
   .heading-primary {
@@ -2857,7 +2800,7 @@ main .blog-section .blog-card.blog-card--hidden {
     align-items: flex-start;
   }
   main .find-a-doc-section .findDocform .btn-submit,
-  main .find-a-doc-section .findDocform input[type="submit"] {
+  main .find-a-doc-section .findDocform input[type=submit] {
     margin-top: 0px;
   }
   main .section-about p.heading-four,
@@ -2937,16 +2880,16 @@ main .blog-section .blog-card.blog-card--hidden {
     align-items: flex-start;
     gap: 10px;
   }
+  .arrow-btn {
+    margin-top: 20px !important;
+  }
   .offcanvas-body h4.heading-four.mt-5 {
     margin-top: 20px !important;
   }
   #footer .site-footer p {
     font-size: 13px;
   }
-  main
-    .section-testimonial
-    .swiper-pagination
-    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  main .section-testimonial .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
     width: 30px;
     height: 30px;
   }
@@ -3006,9 +2949,6 @@ main .blog-section .blog-card.blog-card--hidden {
     padding-top: 25px;
     padding-bottom: 25px;
   }
-  main .section-pricing .container:before {
-    height: 20%;
-  }
 }
 @media (max-width: 374.98px) {
   #up-arrow {
@@ -3051,4 +2991,4 @@ main .blog-section .blog-card.blog-card--hidden {
   main .section-health .header-swiper {
     display: none;
   }
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
