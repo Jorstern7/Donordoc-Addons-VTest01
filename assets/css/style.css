@@ -653,9 +653,51 @@ footer {
     padding-bottom: 45px;
   }
 }
+@media (max-width: 1400px) {
+  main .section-pricing .price-card {
+    max-width: 273px !important;
+  }
+  main .section-pricing .price-card .price-title {
+    font-size: 1.5rem;
+  }
+  main .section-pricing .price-card .price {
+    font-size: 48px;
+  }
+  main .section-pricing .price-card .checklist li {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1200px) {
+  main .section-pricing .price-card {
+    max-width: 253px !important;
+    padding: 24px 16px 20px !important;
+  }
+}
+@media (max-width: 992px) {
+  main .section-pricing .price-card {
+    max-width: 245px !important;
+  }
+  main .section-pricing .price-card .price-title {
+    font-size: 1.1rem !important;
+  }
+  main .section-pricing .price-card .price {
+    font-size: 38px !important;
+  }
+  main .section-pricing .price-card .checklist li {
+    font-size: 12px !important;
+  }
+  main .section-pricing .price-card .checklist {
+    margin-top: 0px !important;
+  }
+}
+@media (max-width: 776px) {
+  main .section-pricing .price-card {
+    max-width: 245px !important;
+  }
+}
 @media (max-width: 575.98px) {
-  .swiper-container {
-    padding: 0px 20px !important;
+  main .section-pricing .price-card {
+    max-width: 265px !important;
   }
   .svc-card {
     max-width: 100%;
@@ -1477,19 +1519,14 @@ main .section-pricing .container:before {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(12%);
+  transform: translateX(-50%) translateY(-8%);
   width: calc(100% - var(--bs-gutter-x, 0.75rem) * 2);
   background-color: #d7f0db;
-  height: 50%;
+  height: 25%;
   border-radius: 0 0 100% 100%;
-}
-main .section-pricing .container .swiper-container {
-  padding-left: 46px;
-  padding-right: 46px;
 }
 main .section-pricing .container .swiper-slide {
   height: auto;
-  display: flex;
 }
 main .section-pricing p,
 main .section-pricing h1 {
@@ -1522,6 +1559,7 @@ main .section-pricing .checklist svg {
 main .section-pricing .price-card {
   background: #ffffff;
   border-radius: 24px;
+  margin: 0px 50px;
   padding: 34px 26px 30px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 6px 18px rgba(0, 0, 0, 0.08);
   display: flex;
@@ -1529,8 +1567,12 @@ main .section-pricing .price-card {
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 100%;
-  margin: 0 auto;
+  max-width: 360px;
+  margin: auto;
+  height: auto;
+}
+main .section-pricing .swiper-container {
+  padding: 0px 36px;
 }
 main .section-pricing .price-icon {
   width: 84px;
@@ -1643,6 +1685,12 @@ main .doctor-section .card .card-body .doctorInfo p {
   text-align: left;
   color: #333;
   line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .doctor-section .card .card-body .doctorInfo p.desigination {
   color: #37b24d;
@@ -2066,6 +2114,11 @@ main .blog-section .blog-card .blogpost--title {
   font-weight: 700;
   color: #0b1b13;
   line-height: 1.3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }
 main .blog-section .blog-card .blog-meta {
   color: #070c08;
@@ -2914,7 +2967,7 @@ main .blog-section .blog-card .card-footer {
   }
   main .section-pricing .container:before {
     height: 20%;
-    transform: translateY(-18%) translateX(-50%);
+    transform: translateY(-5px) translateX(-50%);
   }
 }
 @media (max-width: 576.98px) {

@@ -57,7 +57,21 @@ document.addEventListener("DOMContentLoaded", function () {
   initNavLinkEffects();
   initLazyImages();
   initImageBlurUp();
+  initFooterYear();
 });
+
+function initFooterYear() {
+  try {
+    const yearEl = document.getElementById("footer-year");
+    if (!yearEl) return;
+
+    const currentYear = new Date().getFullYear();
+    yearEl.textContent = currentYear;
+    yearEl.setAttribute("datetime", String(currentYear));
+  } catch (err) {
+    console.error("Footer year init error:", err);
+  }
+}
 
 function initStickyHeader() {
   const header = document.getElementById("header");
@@ -93,7 +107,7 @@ function initStickyHeader() {
       root: null,
       threshold: 0,
       rootMargin: "-100px",
-    }
+    },
   );
 
   obs.observe(hero);
@@ -102,7 +116,7 @@ function initStickyHeader() {
 function initNavScroll() {
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(
-    '.navbar-nav a[href^="#"], .nav a[href^="#"]'
+    '.navbar-nav a[href^="#"], .nav a[href^="#"]',
   );
   const linkMap = {};
   navLinks.forEach((link) => {
@@ -117,7 +131,7 @@ function initNavScroll() {
       if (!visible.length) return;
 
       const topmost = visible.reduce((a, b) =>
-        a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+        a.boundingClientRect.top < b.boundingClientRect.top ? a : b,
       );
 
       const hash = `#${topmost.target.id}`;
@@ -134,7 +148,7 @@ function initNavScroll() {
     {
       threshold: 0.2,
       rootMargin: "-60px 0px -30% 0px",
-    }
+    },
   );
 
   sections.forEach((section) => observer.observe(section));
@@ -154,7 +168,7 @@ function initMobileMenu() {
   }
 
   const offcanvasLinks = document.querySelectorAll(
-    '.offcanvas-body li:not(.dropdown) a[href^="#"]'
+    '.offcanvas-body li:not(.dropdown) a[href^="#"]',
   );
   offcanvasLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -262,11 +276,12 @@ function initSwipers() {
     },
     passiveListeners: true,
     breakpoints: {
-      0: { slidesPerView: 1, spaceBetween: 20 },
-      576: { slidesPerView: 1, spaceBetween: 20 },
-      768: { slidesPerView: 2, spaceBetween: 20 },
-      992: { slidesPerView: 2, spaceBetween: 40 },
-      1200: { slidesPerView: 3, spaceBetween: 40 },
+      0: { slidesPerView: 1 },
+      576: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      992: { slidesPerView: 3 },
+      1200: { slidesPerView: 3 },
+      1400: { slidesPerView: 3 },
     },
   });
 
@@ -312,7 +327,7 @@ function initSwiperAutoplayInView(swipers) {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.5 },
   );
 
   swipers.forEach((swiper) => {
@@ -343,7 +358,7 @@ function initBackToTop() {
     "scroll",
     throttle(function () {
       goTopButton.classList.toggle("show", window.scrollY > 300);
-    }, 100)
+    }, 100),
   );
 
   goTopButton.addEventListener("click", function () {
@@ -472,7 +487,7 @@ function initBlogSection() {
               card.removeEventListener("transitionend", handler);
             }
           },
-          { once: true }
+          { once: true },
         );
       }
     });
@@ -514,10 +529,10 @@ function initBlogSection() {
 
 function initDropdownBehaviors() {
   const navDropdownToggle = document.querySelector(
-    ".nav-item.dropdown .nav-link.dropdown-toggle"
+    ".nav-item.dropdown .nav-link.dropdown-toggle",
   );
   const navDropdownMenu = document.querySelector(
-    ".nav-item.dropdown .dropdown-menu"
+    ".nav-item.dropdown .dropdown-menu",
   );
 
   if (navDropdownToggle && navDropdownMenu) {
@@ -599,7 +614,7 @@ function initDropdownBehaviors() {
 
 function initNavLinkEffects() {
   const allLinks = document.querySelectorAll(
-    ".navbar-nav .nav-link, .navbar-nav .dropdown-item"
+    ".navbar-nav .nav-link, .navbar-nav .dropdown-item",
   );
   const dropdown = document.querySelector(".nav-item.dropdown");
   if (!allLinks.length || !dropdown) return;
@@ -645,7 +660,7 @@ function scaleMiddleSlide(swiper) {
   swiper.slides.forEach((slide) => slide.classList.remove("is-scaled"));
 
   const visibleSlides = Array.from(swiper.slides).filter((slide) =>
-    slide.classList.contains("swiper-slide-visible")
+    slide.classList.contains("swiper-slide-visible"),
   );
 
   if (visibleSlides.length === 3) {
@@ -714,7 +729,7 @@ function initLazyImages() {
               obs.unobserve(img);
             });
           },
-          { rootMargin: "200px 0px" }
+          { rootMargin: "200px 0px" },
         )
       : null;
 
@@ -793,7 +808,7 @@ function initImageBlurUp() {
                 obs.unobserve(img);
               });
             },
-            { rootMargin: "200px 0px", threshold: 0.01 }
+            { rootMargin: "200px 0px", threshold: 0.01 },
           )
         : null;
 
@@ -826,7 +841,7 @@ function initImageBlurUp() {
 
 function initPricingCards() {
   const pricingWrapper = document.querySelector(
-    ".pricing-swiper .swiper-wrapper"
+    ".pricing-swiper .swiper-wrapper",
   );
   if (!pricingWrapper) return;
 
@@ -886,7 +901,7 @@ function initPricingCards() {
         <span class="checklist-item-text">
           ${item}
         </span>
-      </li>`
+      </li>`,
       )
       .join("");
 
