@@ -25,6 +25,7 @@
     /></noscript> -->
     <!-- TEMP: Use non-minified style.css for development -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/fl-datepicker.css" />
     <link
       rel="preload"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -2006,18 +2007,24 @@
                     />
                   </div>
                   <div class="col-md-6 col-12">
-                    <input
-                      class="form-control"
-                      type="text"
-                      placeholder="Date"
-                    />
+                    <div class="fl-picker" id="appointment-date">
+                      <input
+                        class="fl-picker-input"
+                        type="text"
+                        placeholder="Select date"
+                        readonly
+                      />
+                    </div>
                   </div>
                   <div class="col-md-6 col-12">
-                    <input
-                      class="form-control"
-                      type="text"
-                      placeholder="Time"
-                    />
+                    <div class="fl-picker" id="appointment-time">
+                      <input
+                        class="fl-picker-input"
+                        type="text"
+                        placeholder="Select time"
+                        readonly
+                      />
+                    </div>
                   </div>
                 </div>
                 <button type="submit" class="btn btn-submit btn-default w-100">
@@ -3200,5 +3207,78 @@
     <script defer src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- <script defer src="assets/js/script.min.js"></script> -->
     <script defer src="assets/js/script.js"></script>
+    <script defer src="assets/js/fl-datepicker.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize date & time pickers
+        const datePicker = new FLDatePicker(
+          document.getElementById("appointment-date"),
+          {
+            type: "date",
+            placeholder: "Select date",
+          },
+        );
+
+        const timePicker = new FLDatePicker(
+          document.getElementById("appointment-time"),
+          {
+            type: "time",
+            timeStep: 15,
+            placeholder: "Select time",
+          },
+        );
+
+        // Handle appointment form submission
+        const appointmentForm = document.querySelector(
+          "#appointment-cta .custom-form",
+        );
+        if (appointmentForm) {
+          appointmentForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Custom selects (departments)
+            const selectLabels = appointmentForm.querySelectorAll(
+              ".custom-select .selected",
+            );
+            const department =
+              selectLabels[0]?.textContent.trim() || "Not selected";
+            const secondary =
+              selectLabels[1]?.textContent.trim() || "Not selected";
+
+            // Text inputs
+            const name =
+              appointmentForm
+                .querySelector('input[placeholder="Your Name"]')
+                ?.value.trim() || "";
+            const email =
+              appointmentForm
+                .querySelector('input[placeholder="Your Email"]')
+                ?.value.trim() || "";
+
+            // Date & time from pickers
+            const dateValue =
+              document
+                .querySelector("#appointment-date .fl-picker-input")
+                ?.value.trim() || "";
+            const timeValue =
+              document
+                .querySelector("#appointment-time .fl-picker-input")
+                ?.value.trim() || "";
+
+            // Simple JSON payload for the appointment
+            const payload = {
+              department,
+              secondary,
+              name,
+              email,
+              date: dateValue,
+              time: timeValue,
+            };
+
+            alert(JSON.stringify(payload, null, 2));
+          });
+        }
+      });
+    </script>
   </body>
 </html>
