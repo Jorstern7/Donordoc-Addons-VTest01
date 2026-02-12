@@ -59,8 +59,79 @@ document.addEventListener("DOMContentLoaded", function () {
   initImageBlurUp();
   initFooterYear();
   initAppointmentMode();
+  initAppointmentPickers();
   initSectionVisibility();
 });
+
+function initAppointmentPickers() {
+  try {
+    if (typeof window.FLDatePicker !== "function") return;
+
+    const dateEl = document.getElementById("appointment-date");
+    const timeEl = document.getElementById("appointment-time");
+
+    if (dateEl) {
+      new window.FLDatePicker(dateEl, {
+        type: "date",
+        placeholder: "Select date",
+      });
+    }
+    if (timeEl) {
+      new window.FLDatePicker(timeEl, {
+        type: "time",
+        timeStep: 15,
+        placeholder: "Select time",
+      });
+    }
+
+    const appointmentForm = document.querySelector(
+      "#appointment-cta .custom-form",
+    );
+    if (appointmentForm) {
+      appointmentForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const selectLabels = appointmentForm.querySelectorAll(
+          ".custom-select .selected",
+        );
+        const department =
+          selectLabels[0]?.textContent.trim() || "Not selected";
+        const secondary = selectLabels[1]?.textContent.trim() || "Not selected";
+
+        const name =
+          appointmentForm
+            .querySelector('input[placeholder="Your Name"]')
+            ?.value.trim() || "";
+        const email =
+          appointmentForm
+            .querySelector('input[placeholder="Your Email"]')
+            ?.value.trim() || "";
+
+        const dateValue =
+          document
+            .querySelector("#appointment-date .fl-picker-input")
+            ?.value.trim() || "";
+        const timeValue =
+          document
+            .querySelector("#appointment-time .fl-picker-input")
+            ?.value.trim() || "";
+
+        const payload = {
+          department,
+          secondary,
+          name,
+          email,
+          date: dateValue,
+          time: timeValue,
+        };
+
+        alert(JSON.stringify(payload, null, 2));
+      });
+    }
+  } catch (err) {
+    console.error("initAppointmentPickers error:", err);
+  }
+}
 
 function initFooterYear() {
   try {
