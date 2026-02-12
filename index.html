@@ -1975,69 +1975,85 @@
               </div>
             </div>
             <div class="col-lg-6 col-md-12 col-12">
-              <form class="custom-form">
-                <h1 class="form-title">Book An Appointment</h1>
+              <div
+                class="appointment-mode-internal"
+                data-appointment-mode="internal"
+              >
+                <form class="custom-form">
+                  <h1 class="form-title">Book An Appointment</h1>
 
-                <div class="my-0 row my-xl-3 g-3">
-                  <div class="col-md-6 col-12">
-                    <div class="custom-select">
-                      <div class="selected">Choose Department</div>
-                      <div class="options">
-                        <div class="option">Department One</div>
-                        <div class="option">Department Two</div>
-                        <div class="option">Department Three</div>
+                  <div class="my-0 row my-xl-3 g-3">
+                    <div class="col-md-6 col-12">
+                      <div class="custom-select">
+                        <div class="selected">Choose Department</div>
+                        <div class="options">
+                          <div class="option">Department One</div>
+                          <div class="option">Department Two</div>
+                          <div class="option">Department Three</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                      <div class="custom-select">
+                        <div class="selected">Choose Department</div>
+                        <div class="options">
+                          <div class="option">Department One</div>
+                          <div class="option">Department Two</div>
+                          <div class="option">Department Three</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="Your Name"
+                      />
+                    </div>
+                    <div class="col-md-6 col-12">
+                      <input
+                        class="form-control"
+                        type="text"
+                        placeholder="Your Email"
+                      />
+                    </div>
+                    <div class="col-md-6 col-12">
+                      <div class="fl-picker" id="appointment-date">
+                        <input
+                          class="fl-picker-input"
+                          type="text"
+                          placeholder="Select date"
+                          readonly
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                      <div class="fl-picker" id="appointment-time">
+                        <input
+                          class="fl-picker-input"
+                          type="text"
+                          placeholder="Select time"
+                          readonly
+                        />
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6 col-12">
-                    <div class="custom-select">
-                      <div class="selected">Choose Department</div>
-                      <div class="options">
-                        <div class="option">Department One</div>
-                        <div class="option">Department Two</div>
-                        <div class="option">Department Three</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-12">
-                    <input
-                      class="form-control"
-                      type="text"
-                      placeholder="Your Name"
-                    />
-                  </div>
-                  <div class="col-md-6 col-12">
-                    <input
-                      class="form-control"
-                      type="text"
-                      placeholder="Your Email"
-                    />
-                  </div>
-                  <div class="col-md-6 col-12">
-                    <div class="fl-picker" id="appointment-date">
-                      <input
-                        class="fl-picker-input"
-                        type="text"
-                        placeholder="Select date"
-                        readonly
-                      />
-                    </div>
-                  </div>
-                  <div class="col-md-6 col-12">
-                    <div class="fl-picker" id="appointment-time">
-                      <input
-                        class="fl-picker-input"
-                        type="text"
-                        placeholder="Select time"
-                        readonly
-                      />
-                    </div>
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-submit btn-default w-100">
-                  Make An Appointment
-                </button>
-              </form>
+                  <button
+                    type="submit"
+                    class="btn btn-submit btn-default w-100"
+                  >
+                    Make An Appointment
+                  </button>
+                </form>
+              </div>
+              <div
+                class="appointment-mode-external"
+                data-appointment-mode="external"
+                style="display: none"
+              >
+                <!-- Vendor-agnostic booking widget placeholder.
+                Example: Calendly embed (can be replaced with any vendor) -->
+              </div>
             </div>
           </div>
         </div>

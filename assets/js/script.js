@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initLazyImages();
   initImageBlurUp();
   initFooterYear();
+  initAppointmentMode();
   initSectionVisibility();
 });
 
@@ -106,6 +107,65 @@ function initSectionVisibility() {
       });
   } catch (err) {
     console.error("initSectionVisibility error:", err);
+  }
+}
+
+function initAppointmentMode() {
+  try {
+    const section = document.getElementById("appointment-cta");
+    if (!section) return;
+
+    const internalEl = section.querySelector(
+      '[data-appointment-mode="internal"]',
+    );
+    const externalEl = section.querySelector(
+      '[data-appointment-mode="external"]',
+    );
+
+    // If containers are missing, do nothing but log for developers
+    if (!internalEl && !externalEl) {
+      console.warn(
+        "initAppointmentMode: no appointment mode containers found.",
+      );
+      return;
+    }
+
+    fetch("assets/config/appointment.json")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Failed to load appointment.json");
+        }
+        return response.json();
+      })
+      .then(function (config) {
+        const mode =
+          config && typeof config.mode === "string"
+            ? config.mode.toLowerCase()
+            : "internal";
+
+        if (mode === "external") {
+          // Prefer external widget: remove/hide internal form
+          if (internalEl) {
+            internalEl.remove();
+          }
+          if (externalEl) {
+            externalEl.style.display = "";
+          }
+        } else {
+          // Default to internal mode
+          if (externalEl) {
+            externalEl.remove();
+          }
+          if (internalEl) {
+            internalEl.style.display = "";
+          }
+        }
+      })
+      .catch(function (error) {
+        console.error("Error applying appointment mode config:", error);
+      });
+  } catch (err) {
+    console.error("initAppointmentMode error:", err);
   }
 }
 
