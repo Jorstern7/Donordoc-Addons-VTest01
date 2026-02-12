@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initLazyImages();
   initImageBlurUp();
   initFooterYear();
+  initSectionVisibility();
 });
 
 function initFooterYear() {
@@ -70,6 +71,41 @@ function initFooterYear() {
     yearEl.setAttribute("datetime", String(currentYear));
   } catch (err) {
     console.error("Footer year init error:", err);
+  }
+}
+
+function initSectionVisibility() {
+  try {
+    fetch("assets/config/sections.json")
+      .then(function (response) {
+        if (!response.ok) {
+          throw new Error("Failed to load sections.json");
+        }
+        return response.json();
+      })
+      .then(function (config) {
+        if (!config || typeof config !== "object") {
+          return;
+        }
+
+        Object.keys(config).forEach(function (key) {
+          var enabled = !!config[key];
+          var section = document.querySelector(
+            '[data-section-key="' + key + '"]',
+          );
+
+          if (!section) {
+            return;
+          }
+
+          section.hidden = !enabled;
+        });
+      })
+      .catch(function (error) {
+        console.error("Error applying section visibility config:", error);
+      });
+  } catch (err) {
+    console.error("initSectionVisibility error:", err);
   }
 }
 

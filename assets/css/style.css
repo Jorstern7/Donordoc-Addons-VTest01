@@ -969,6 +969,11 @@ footer {
   visibility: visible !important;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
 main .section-health {
   padding: 50px 0 100px 0;
 }
@@ -1033,9 +1038,6 @@ main .section-health .header-swiper img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-main .section-featured {
-  padding: 50px 0 30px 0;
-}
 main .section-featured h1 {
   font-size: 14px;
   text-transform: uppercase;
@@ -1074,9 +1076,6 @@ main .section-featured .swiper-slide a img {
 main .section-featured .swiper-slide a img:hover {
   filter: brightness(1);
   opacity: 100%;
-}
-main .section-about {
-  padding: 50px 0;
 }
 main .section-about h1 {
   font-size: 35px;
@@ -1145,9 +1144,6 @@ main .section-about .icon-wrapping .icons-about figcaption .phase--2 {
   color: #37b24d;
   font-weight: bold;
   display: inline-block;
-}
-main .services-section {
-  padding-top: 50px;
 }
 main .services-section p,
 main .services-section h1 {
@@ -1396,7 +1392,7 @@ main .services-section .flip .card:hover .card-body.back .btn-arrow {
   opacity: 1;
 }
 main .appointment-form-section {
-  padding: 90px 0;
+  padding-bottom: 90px;
 }
 main .appointment-form-section .options {
   position: absolute;
@@ -1503,15 +1499,12 @@ main .appointment-form-section .custom-form input[type=submit]:hover {
   box-shadow: 0 0 6px #37b24d;
 }
 main .section-pricing {
-  padding: 50px 0;
   position: relative;
 }
 main .section-pricing .checklist {
   text-align: start;
 }
 main .section-pricing .container {
-  padding-top: 50px;
-  padding-bottom: 50px;
   position: relative;
 }
 main .section-pricing .container:before {
@@ -1519,7 +1512,7 @@ main .section-pricing .container:before {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(-8%);
+  transform: translateX(-50%) translateY(14%);
   width: calc(100% - var(--bs-gutter-x, 0.75rem) * 2);
   background-color: #d7f0db;
   height: 25%;
@@ -1638,9 +1631,6 @@ main .section-pricing .icon-normal {
 main .section-pricing .doctor__contact a {
   text-decoration: none;
 }
-main .doctor-section {
-  padding: 50px 0;
-}
 main .doctor-section p,
 main .doctor-section h1 {
   text-align: center;
@@ -1713,7 +1703,7 @@ main .doctor-section .card .card-body .doctorInfo .doctor-contact a svg {
   stroke-width: 0.8;
 }
 main .find-a-doc-section {
-  padding: 50px 0;
+  padding-bottom: 50px;
 }
 main .find-a-doc-section h1,
 main .find-a-doc-section p {
@@ -1804,9 +1794,6 @@ main .find-a-doc-section .findDocform .btn-submit:hover,
 main .find-a-doc-section .findDocform input[type=submit]:hover {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 6px #37b24d;
-}
-main .section-testimonial {
-  padding: 50px 0;
 }
 main .section-testimonial h1,
 main .section-testimonial p {
@@ -1920,9 +1907,6 @@ main .section-testimonial .swiper-pagination .swiper-pagination-bullet.swiper-pa
   background-color: #37b24d;
   width: 40px;
   height: 40px;
-}
-main .blog-section {
-  padding: 50px 0;
 }
 main .blog-section h1,
 main .blog-section p {
@@ -2157,7 +2141,7 @@ main .blog-section .blog-card .card-footer {
 }
 
 #footer .footer-section {
-  padding: 50px 0;
+  padding: 90px 0 50px 0;
 }
 #footer .footer-section p {
   margin: 10px 0;
@@ -2967,7 +2951,10 @@ main .blog-section .blog-card .card-footer {
   }
   main .section-pricing .container:before {
     height: 20%;
-    transform: translateY(-5px) translateX(-50%);
+    transform: translateY(14px) translateX(-50%);
+  }
+  .arrow-btn {
+    margin-top: 20px;
   }
 }
 @media (max-width: 576.98px) {
