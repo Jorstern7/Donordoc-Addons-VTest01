@@ -76,6 +76,7 @@ function initAppointmentPickers() {
         placeholder: "Select date",
         // Restrict to today and future dates only
         disablePast: true,
+        closeOnSelect: false,
       });
     }
     if (timeEl) {
@@ -83,6 +84,7 @@ function initAppointmentPickers() {
         type: "time",
         timeStep: 15,
         placeholder: "Select time",
+        closeOnSelect: false,
       });
     }
 
