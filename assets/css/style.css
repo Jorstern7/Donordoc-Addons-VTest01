@@ -34,9 +34,7 @@ body.loading {
   z-index: 11000; /* above header */
   opacity: 1;
   visibility: visible;
-  transition:
-    opacity 0.4s ease,
-    visibility 0.4s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
 #preloader.preloader-hidden {
@@ -148,9 +146,7 @@ footer {
   border: 1px solid #ccc;
   border-radius: 50%;
   cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 .arrow-btn button svg {
   color: #37b24d;
@@ -187,13 +183,11 @@ footer {
   border: none;
   color: #fff;
 }
-.btn.btn-default:hover,
-.btn.btn-default:active {
+.btn.btn-default:hover, .btn.btn-default:active {
   background: linear-gradient(to right, #2e9a43, #178f86);
   color: #fff;
 }
-.btn.btn-default::before,
-.btn.btn-default::after {
+.btn.btn-default::before, .btn.btn-default::after {
   content: "";
   position: absolute;
   height: 100%;
@@ -205,8 +199,7 @@ footer {
   color: #555;
   border: 3px solid transparent;
 }
-.btn.btn-outline:hover,
-.btn.btn-outline:active {
+.btn.btn-outline:hover, .btn.btn-outline:active {
   background-color: #ebf7ed;
   border-color: #b3b3b3;
   color: #b3b3b3;
@@ -214,8 +207,7 @@ footer {
 .btn.colored-border {
   border-color: #b3b3b3 !important;
 }
-.btn.no-effect:hover svg,
-.btn.no-effect:active svg {
+.btn.no-effect:hover svg, .btn.no-effect:active svg {
   transform: none !important;
   color: #b3b3b3;
 }
@@ -224,19 +216,13 @@ footer {
   width: 20px;
   color: inherit;
   transform: rotate(0);
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
-.btn:hover svg,
-.btn:active svg {
+.btn:hover svg, .btn:active svg {
   transform: rotate(90deg);
   color: #b3b3b3;
 }
-.btn:active,
-.btn:focus,
-.btn:focus-visible,
-.btn:active {
+.btn:active, .btn:focus, .btn:focus-visible, .btn:active {
   outline: 0;
   box-shadow: none;
 }
@@ -283,10 +269,7 @@ footer {
   font-size: 16px;
   line-height: normal;
 }
-.custom-popup:hover,
-.custom-popup:focus,
-.custom-popup:active,
-.custom-popup:focus-visible {
+.custom-popup:hover, .custom-popup:focus, .custom-popup:active, .custom-popup:focus-visible {
   box-shadow: 0 0 6px #37b24d;
   outline: none;
   transition: 0.5s all;
@@ -368,10 +351,7 @@ footer {
   font-size: 16px;
   line-height: normal;
 }
-.custom-select:hover,
-.custom-select:focus,
-.custom-select:active,
-.custom-select:focus-visible {
+.custom-select:hover, .custom-select:focus, .custom-select:active, .custom-select:focus-visible {
   box-shadow: 0 0 6px #37b24d;
   outline: none;
   transition: 0.5s all;
@@ -420,8 +400,7 @@ footer {
   flex-wrap: wrap;
   gap: 22.5px;
   justify-content: space-between;
-  font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .svc-card {
@@ -728,9 +707,7 @@ footer {
   }
 }
 #header-wrapper {
-  transition:
-    transform 0.5s ease,
-    top 0.5s ease;
+  transition: transform 0.5s ease, top 0.5s ease;
 }
 #header-wrapper.slide-in {
   transform: translateY(0);
@@ -818,9 +795,7 @@ footer {
 #header nav .dropdown-menu {
   opacity: 0;
   transform: translateY(10px);
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   display: block !important;
   visibility: hidden;
   pointer-events: none;
@@ -856,12 +831,10 @@ footer {
   background-color: #37b24d;
   transition: all 0.5s ease-in-out;
 }
-#header nav ul:not(.dropdown-menu) > li > a.active,
-#header nav ul:not(.dropdown-menu) > li > a:hover {
+#header nav ul:not(.dropdown-menu) > li > a.active, #header nav ul:not(.dropdown-menu) > li > a:hover {
   color: #37b24d;
 }
-#header nav ul:not(.dropdown-menu) > li > a.active::before,
-#header nav ul:not(.dropdown-menu) > li > a:hover::before {
+#header nav ul:not(.dropdown-menu) > li > a.active::before, #header nav ul:not(.dropdown-menu) > li > a:hover::before {
   width: 100%;
 }
 #header nav ul:not(.dropdown-menu) > li > a.btn {
@@ -979,9 +952,7 @@ footer {
   #header nav .dropdown-menu {
     opacity: 0;
     transform: translateY(10px);
-    transition:
-      opacity 0.3s ease,
-      transform 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     display: block !important;
     visibility: hidden;
     pointer-events: none;
@@ -999,6 +970,11 @@ footer {
   visibility: visible !important;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
 main .section-health {
   padding: 50px 0 100px 0;
 }
@@ -1014,9 +990,7 @@ main .section-health .health-img-box {
 main .section-health .health-img-box .health-img {
   position: absolute;
   border-radius: 9px;
-  transition:
-    transform 0.8s ease,
-    z-index 0.5s ease-in-out;
+  transition: transform 0.8s ease, z-index 0.5s ease-in-out;
   width: 380px;
 }
 main .section-health .health-img-box .health-img.health-img--1 {
@@ -1063,10 +1037,7 @@ main .section-health .header-swiper img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
-}
-main .section-featured {
-  padding: 50px 0 30px 0;
+     object-fit: cover;
 }
 main .section-featured h1 {
   font-size: 14px;
@@ -1098,7 +1069,7 @@ main .section-featured .swiper-slide a img {
   max-height: 100%;
   width: 100%;
   -o-object-fit: contain;
-  object-fit: contain;
+     object-fit: contain;
   filter: brightness(0);
   opacity: 50%;
   transition: all 0.3s ease-in-out;
@@ -1106,9 +1077,6 @@ main .section-featured .swiper-slide a img {
 main .section-featured .swiper-slide a img:hover {
   filter: brightness(1);
   opacity: 100%;
-}
-main .section-about {
-  padding: 50px 0;
 }
 main .section-about h1 {
   font-size: 35px;
@@ -1177,9 +1145,6 @@ main .section-about .icon-wrapping .icons-about figcaption .phase--2 {
   color: #37b24d;
   font-weight: bold;
   display: inline-block;
-}
-main .services-section {
-  padding-top: 50px;
 }
 main .services-section p,
 main .services-section h1 {
@@ -1259,9 +1224,7 @@ main .services-section .flip .card .card-body.front {
 }
 @-moz-document url-prefix() {
   main .services-section .flip .card .card-body.front {
-    transition:
-      opacity 0.3s ease,
-      visibility 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
 }
 main .services-section .flip .card .card-body.front .learn-more-btn {
@@ -1346,14 +1309,7 @@ main .services-section .flip .card .card-body.back .service-box-info .rating {
   border-top: 0;
   background-color: #d3f9d8;
 }
-main
-  .services-section
-  .flip
-  .card
-  .card-body.back
-  .service-box-info
-  .rating
-  svg {
+main .services-section .flip .card .card-body.back .service-box-info .rating svg {
   padding: 0;
   height: 20px;
   width: 20px;
@@ -1425,10 +1381,7 @@ main .services-section .flip .card .card-body .service-list div {
 main .services-section .flip .card .card-body .service-list div:last-child {
   border-bottom: none;
 }
-main .services-section .flip .card .card-body .service-list div:hover,
-main .services-section .flip .card .card-body .service-list div:active,
-main .services-section .flip .card .card-body .service-list div:focus,
-main .services-section .flip .card .card-body .service-list div:focus-visible {
+main .services-section .flip .card .card-body .service-list div:hover, main .services-section .flip .card .card-body .service-list div:active, main .services-section .flip .card .card-body .service-list div:focus, main .services-section .flip .card .card-body .service-list div:focus-visible {
   background-color: #37b24d;
   color: #fff;
 }
@@ -1440,7 +1393,7 @@ main .services-section .flip .card:hover .card-body.back .btn-arrow {
   opacity: 1;
 }
 main .appointment-form-section {
-  padding: 90px 0;
+  padding-bottom: 90px;
 }
 main .appointment-form-section .options {
   position: absolute;
@@ -1518,10 +1471,7 @@ main .appointment-form-section .custom-form .form-select {
   color: #37b24d;
   transition: 0.5s all;
 }
-main .appointment-form-section .custom-form .form-control:hover,
-main .appointment-form-section .custom-form .form-control:focus,
-main .appointment-form-section .custom-form .form-control:active,
-main .appointment-form-section .custom-form .form-control:focus-visible,
+main .appointment-form-section .custom-form .form-control:hover, main .appointment-form-section .custom-form .form-control:focus, main .appointment-form-section .custom-form .form-control:active, main .appointment-form-section .custom-form .form-control:focus-visible,
 main .appointment-form-section .custom-form .form-select:hover,
 main .appointment-form-section .custom-form .form-select:focus,
 main .appointment-form-section .custom-form .form-select:active,
@@ -1531,7 +1481,7 @@ main .appointment-form-section .custom-form .form-select:focus-visible {
   transition: 0.5s all;
 }
 main .appointment-form-section .custom-form .btn-submit,
-main .appointment-form-section .custom-form input[type="submit"] {
+main .appointment-form-section .custom-form input[type=submit] {
   margin-top: 20px;
   background-color: #37b24d;
   color: #fff;
@@ -1544,21 +1494,18 @@ main .appointment-form-section .custom-form input[type="submit"] {
   transition: all 0.3s ease-in-out;
 }
 main .appointment-form-section .custom-form .btn-submit:hover,
-main .appointment-form-section .custom-form input[type="submit"]:hover {
+main .appointment-form-section .custom-form input[type=submit]:hover {
   background-color: #32a045;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 6px #37b24d;
 }
 main .section-pricing {
-  padding: 50px 0;
   position: relative;
 }
 main .section-pricing .checklist {
   text-align: start;
 }
 main .section-pricing .container {
-  padding-top: 50px;
-  padding-bottom: 50px;
   position: relative;
 }
 main .section-pricing .container:before {
@@ -1566,7 +1513,7 @@ main .section-pricing .container:before {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%) translateY(-10%);
+  transform: translateX(-50%) translateY(14%);
   width: calc(100% - var(--bs-gutter-x, 0.75rem) * 2);
   background-color: #d7f0db;
   height: 25%;
@@ -1608,9 +1555,7 @@ main .section-pricing .price-card {
   border-radius: 24px;
   margin: 0px 50px;
   padding: 34px 26px 30px;
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.06),
-    0 6px 18px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 6px 18px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1666,13 +1611,8 @@ main .section-pricing .price-card .button {
   background: #37b24d;
   color: #fff;
   text-decoration: none;
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.06),
-    0 6px 18px rgba(0, 0, 0, 0.08);
-  transition:
-    transform 0.08s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.08s ease, box-shadow 0.2s ease, background 0.2s ease;
   width: min(260px, 100%);
 }
 main .section-pricing .price-card .button:hover {
@@ -1691,9 +1631,6 @@ main .section-pricing .icon-normal {
 }
 main .section-pricing .doctor__contact a {
   text-decoration: none;
-}
-main .doctor-section {
-  padding: 50px 0;
 }
 main .doctor-section p,
 main .doctor-section h1 {
@@ -1717,7 +1654,7 @@ main .doctor-section .card .card-body img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   aspect-ratio: 4/3;
   border-radius: 9px 0 0 9px;
 }
@@ -1767,7 +1704,7 @@ main .doctor-section .card .card-body .doctorInfo .doctor-contact a svg {
   stroke-width: 0.8;
 }
 main .find-a-doc-section {
-  padding: 50px 0;
+  padding-bottom: 50px;
 }
 main .find-a-doc-section h1,
 main .find-a-doc-section p {
@@ -1834,10 +1771,7 @@ main .find-a-doc-section .findDocform .form-select {
   color: #37b24d;
   transition: 0.5s all;
 }
-main .find-a-doc-section .findDocform .form-control:hover,
-main .find-a-doc-section .findDocform .form-control:focus,
-main .find-a-doc-section .findDocform .form-control:active,
-main .find-a-doc-section .findDocform .form-control:focus-visible,
+main .find-a-doc-section .findDocform .form-control:hover, main .find-a-doc-section .findDocform .form-control:focus, main .find-a-doc-section .findDocform .form-control:active, main .find-a-doc-section .findDocform .form-control:focus-visible,
 main .find-a-doc-section .findDocform .form-select:hover,
 main .find-a-doc-section .findDocform .form-select:focus,
 main .find-a-doc-section .findDocform .form-select:active,
@@ -1847,7 +1781,7 @@ main .find-a-doc-section .findDocform .form-select:focus-visible {
   transition: 0.5s all;
 }
 main .find-a-doc-section .findDocform .btn-submit,
-main .find-a-doc-section .findDocform input[type="submit"] {
+main .find-a-doc-section .findDocform input[type=submit] {
   color: #fff;
   border: none;
   padding: 20px 40px;
@@ -1858,12 +1792,9 @@ main .find-a-doc-section .findDocform input[type="submit"] {
   transition: all 0.3s ease-in-out;
 }
 main .find-a-doc-section .findDocform .btn-submit:hover,
-main .find-a-doc-section .findDocform input[type="submit"]:hover {
+main .find-a-doc-section .findDocform input[type=submit]:hover {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 6px #37b24d;
-}
-main .section-testimonial {
-  padding: 50px 0;
 }
 main .section-testimonial h1,
 main .section-testimonial p {
@@ -1939,7 +1870,7 @@ main .section-testimonial .card .card-body .circle-container .img-wrapper img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
 }
 main .section-testimonial .card .card-body h4 {
   font-size: 24px;
@@ -1973,16 +1904,10 @@ main .section-testimonial .swiper-pagination .swiper-pagination-bullet {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-main
-  .section-testimonial
-  .swiper-pagination
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+main .section-testimonial .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #37b24d;
   width: 40px;
   height: 40px;
-}
-main .blog-section {
-  padding: 50px 0;
 }
 main .blog-section h1,
 main .blog-section p {
@@ -2045,7 +1970,7 @@ main .blog-section .card .card-footer .post-author img {
   height: 60px;
   border-radius: 50%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   border: 2px solid #ddd;
 }
 main .blog-section .card .card-footer .post-author h6 {
@@ -2081,10 +2006,7 @@ main .blog-section .blog-card {
   transform: translateY(0);
   overflow: hidden;
   will-change: opacity, transform;
-  transition:
-    max-height 0.8s ease-out,
-    opacity 0.8s ease-out,
-    transform 0.8s ease-out;
+  transition: max-height 0.8s ease-out, opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 main .blog-section .blog-card .card {
   display: flex;
@@ -2096,8 +2018,7 @@ main .blog-section .blog-card .card {
   transform: translateY(0);
   transition: transform 0.18s ease-out;
 }
-main .blog-section .blog-card:hover .card,
-main .blog-section .blog-card:focus-within .card {
+main .blog-section .blog-card:hover .card, main .blog-section .blog-card:focus-within .card {
   transform: translateY(-6px);
 }
 main .blog-section .blog-card .blog-card-image {
@@ -2108,8 +2029,7 @@ main .blog-section .blog-card .blog-card-image img {
   transform: scale(1);
   transition: transform 0.25s ease-out;
 }
-main .blog-section .blog-card:hover .blog-card-image img,
-main .blog-section .blog-card:focus-within .blog-card-image img {
+main .blog-section .blog-card:hover .blog-card-image img, main .blog-section .blog-card:focus-within .blog-card-image img {
   transform: scale(1.05);
 }
 main .blog-section .blog-card.blog-card--hidden {
@@ -2136,7 +2056,7 @@ main .blog-section .blog-card .card-img-top {
   width: 100%;
   height: 200px;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   border-radius: 20px 20px 0 0;
   display: block;
 }
@@ -2222,7 +2142,7 @@ main .blog-section .blog-card .card-footer {
 }
 
 #footer .footer-section {
-  padding: 50px 0;
+  padding: 90px 0 50px 0;
 }
 #footer .footer-section p {
   margin: 10px 0;
@@ -2244,10 +2164,7 @@ main .blog-section .blog-card .card-footer {
   color: #37b24d;
   transition: 0.5s all;
 }
-#footer .footer-section #newsletterform .form-control:hover,
-#footer .footer-section #newsletterform .form-control:focus,
-#footer .footer-section #newsletterform .form-control:active,
-#footer .footer-section #newsletterform .form-control:focus-visible,
+#footer .footer-section #newsletterform .form-control:hover, #footer .footer-section #newsletterform .form-control:focus, #footer .footer-section #newsletterform .form-control:active, #footer .footer-section #newsletterform .form-control:focus-visible,
 #footer .footer-section #newsletterform .form-select:hover,
 #footer .footer-section #newsletterform .form-select:focus,
 #footer .footer-section #newsletterform .form-select:active,
@@ -2257,7 +2174,7 @@ main .blog-section .blog-card .card-footer {
   transition: 0.5s all;
 }
 #footer .footer-section #newsletterform .btn-submit,
-#footer .footer-section #newsletterform input[type="submit"] {
+#footer .footer-section #newsletterform input[type=submit] {
   background-color: #37b24d;
   color: #fff;
   border: none;
@@ -2270,7 +2187,7 @@ main .blog-section .blog-card .card-footer {
   transition: all 0.3s ease-in-out;
 }
 #footer .footer-section #newsletterform .btn-submit:hover,
-#footer .footer-section #newsletterform input[type="submit"]:hover {
+#footer .footer-section #newsletterform input[type=submit]:hover {
   background-color: #32a045;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 6px #37b24d;
@@ -2336,10 +2253,7 @@ main .blog-section .blog-card .card-footer {
   transition: 0.3s all;
   z-index: 1000;
 }
-#up-arrow:hover,
-#up-arrow:active,
-#up-arrow:focus,
-#up-arrow:focus-visible {
+#up-arrow:hover, #up-arrow:active, #up-arrow:focus, #up-arrow:focus-visible {
   background-color: #fff;
   border-color: #32a045;
   color: #32a045;
@@ -2477,7 +2391,7 @@ main .blog-section .blog-card .card-footer {
     font-size: 14px;
   }
   #footer .footer-section #newsletterform .btn-submit,
-  #footer .footer-section #newsletterform input[type="submit"] {
+  #footer .footer-section #newsletterform input[type=submit] {
     padding: 10px 5px;
     font-size: 14px;
   }
@@ -2702,7 +2616,7 @@ main .blog-section .blog-card .card-footer {
   main .blog-section .card .card-img-top {
     height: 100%;
     -o-object-fit: cover;
-    object-fit: cover;
+       object-fit: cover;
     border-radius: 9px 0 0 9px;
   }
   main .blog-section .card .card-body p {
@@ -2774,7 +2688,7 @@ main .blog-section .blog-card .card-footer {
   main .doctor-section .card .card-body img {
     border-radius: 9px 9px 0 0;
     -o-object-position: top;
-    object-position: top;
+       object-position: top;
   }
 }
 @media (max-width: 767.98px) {
@@ -2839,7 +2753,7 @@ main .blog-section .blog-card .card-footer {
     padding: 0;
   }
   main .find-a-doc-section .findDocform .btn-submit,
-  main .find-a-doc-section .findDocform input[type="submit"] {
+  main .find-a-doc-section .findDocform input[type=submit] {
     margin-top: 20px;
   }
   main .find-a-doc-section {
@@ -2873,7 +2787,7 @@ main .blog-section .blog-card .card-footer {
   main .blog-section .card .card-img-top {
     height: 100%;
     -o-object-fit: cover;
-    object-fit: cover;
+       object-fit: cover;
     border-radius: 9px 0 0 9px;
   }
   main .blog-section .card .card-body p {
@@ -2908,9 +2822,7 @@ main .blog-section .blog-card .card-footer {
     flex-direction: row;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow:
-      0 1px 1px rgba(0, 0, 0, 0.06),
-      0 6px 18px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 6px 18px rgba(0, 0, 0, 0.08);
     min-height: 200px;
   }
   main .blog-section .blog-card .blog-card-inner {
@@ -2937,7 +2849,7 @@ main .blog-section .blog-card .card-footer {
     width: 100%;
     height: 100%;
     -o-object-fit: cover;
-    object-fit: cover;
+       object-fit: cover;
     border-radius: 0;
     display: block;
   }
@@ -3015,7 +2927,7 @@ main .blog-section .blog-card .card-footer {
   main .doctor-section .card .card-body img {
     border-radius: 9px 9px 0 0;
     -o-object-position: top;
-    object-position: top;
+       object-position: top;
   }
   main .section-health {
     padding: 50px 0 50px 0;
@@ -3040,6 +2952,7 @@ main .blog-section .blog-card .card-footer {
   }
   main .section-pricing .container:before {
     height: 20%;
+    transform: translateY(14px) translateX(-50%);
   }
   .arrow-btn {
     margin-top: 20px;
@@ -3055,7 +2968,6 @@ main .blog-section .blog-card .card-footer {
   main .section-about .card-img-top {
     border-radius: 9px 9px 0 0;
   }
-
   main .section-about .card-body {
     padding: 10px;
   }
@@ -3064,7 +2976,7 @@ main .blog-section .blog-card .card-footer {
     align-items: flex-start;
   }
   main .find-a-doc-section .findDocform .btn-submit,
-  main .find-a-doc-section .findDocform input[type="submit"] {
+  main .find-a-doc-section .findDocform input[type=submit] {
     margin-top: 0px;
   }
   main .section-about p.heading-four,
@@ -3153,10 +3065,7 @@ main .blog-section .blog-card .card-footer {
   #footer .site-footer p {
     font-size: 13px;
   }
-  main
-    .section-testimonial
-    .swiper-pagination
-    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  main .section-testimonial .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
     width: 30px;
     height: 30px;
   }
@@ -3216,10 +3125,6 @@ main .blog-section .blog-card .card-footer {
     padding-top: 25px;
     padding-bottom: 25px;
   }
-  main .section-pricing .container:before {
-    height: 20%;
-    transform: translateY(14px) translateX(-50%);
-  }
 }
 @media (max-width: 374.98px) {
   #up-arrow {
@@ -3262,4 +3167,4 @@ main .blog-section .blog-card .card-footer {
   main .section-health .header-swiper {
     display: none;
   }
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
