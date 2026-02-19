@@ -970,11 +970,6 @@ footer {
   visibility: visible !important;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
-}
 main .section-health {
   padding: 50px 0 100px 0;
 }
@@ -1036,8 +1031,10 @@ main .section-health .header-swiper img {
   display: block;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
+}
+main .section-featured {
+  padding: 50px 0 30px 0;
 }
 main .section-featured h1 {
   font-size: 14px;
@@ -1068,8 +1065,7 @@ main .section-featured .swiper-slide a {
 main .section-featured .swiper-slide a img {
   max-height: 100%;
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   filter: brightness(0);
   opacity: 50%;
   transition: all 0.3s ease-in-out;
@@ -1077,6 +1073,9 @@ main .section-featured .swiper-slide a img {
 main .section-featured .swiper-slide a img:hover {
   filter: brightness(1);
   opacity: 100%;
+}
+main .section-about {
+  padding: 50px 0;
 }
 main .section-about h1 {
   font-size: 35px;
@@ -1146,6 +1145,9 @@ main .section-about .icon-wrapping .icons-about figcaption .phase--2 {
   font-weight: bold;
   display: inline-block;
 }
+main .services-section {
+  padding-top: 50px;
+}
 main .services-section p,
 main .services-section h1 {
   text-align: center;
@@ -1158,6 +1160,7 @@ main .services-section h1 {
   font-weight: bold;
 }
 main .services-section .flip {
+  -webkit-perspective: 800px;
   perspective: 800px;
   position: relative;
   text-align: center;
@@ -1178,7 +1181,9 @@ main .services-section .flip {
 }
 main .services-section .flip .card {
   min-height: 310px;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  -webkit-transition: transform 0.6s ease;
   transition: transform 0.6s ease;
   background-color: transparent;
   border-radius: 9px;
@@ -1193,9 +1198,11 @@ main .services-section .flip .card {
   }
 }
 main .services-section .flip .card.flipped {
+  -webkit-transform: rotatey(-180deg);
   transform: rotatey(-180deg);
 }
 main .services-section .flip .card .card-body {
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   position: absolute;
   top: 0;
@@ -1233,7 +1240,6 @@ main .services-section .flip .card .card-body.front .learn-more-btn {
   padding: 6.5px 20px;
   left: 0;
   right: 0;
-  width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
   background-color: #37b24d;
@@ -1244,6 +1250,7 @@ main .services-section .flip .card .card-body.front .service-box-info {
   padding-bottom: 0;
 }
 main .services-section .flip .card .card-body.back {
+  -webkit-transform: rotatey(180deg);
   transform: rotatey(180deg);
   z-index: 1;
 }
@@ -1393,7 +1400,7 @@ main .services-section .flip .card:hover .card-body.back .btn-arrow {
   opacity: 1;
 }
 main .appointment-form-section {
-  padding-bottom: 90px;
+  padding: 90px 0;
 }
 main .appointment-form-section .options {
   position: absolute;
@@ -1500,6 +1507,7 @@ main .appointment-form-section .custom-form input[type=submit]:hover {
   box-shadow: 0 0 6px #37b24d;
 }
 main .section-pricing {
+  padding: 50px 0;
   position: relative;
 }
 main .section-pricing .checklist {
@@ -1507,6 +1515,8 @@ main .section-pricing .checklist {
 }
 main .section-pricing .container {
   position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 main .section-pricing .container:before {
   content: "";
@@ -1632,6 +1642,9 @@ main .section-pricing .icon-normal {
 main .section-pricing .doctor__contact a {
   text-decoration: none;
 }
+main .doctor-section {
+  padding: 50px 0;
+}
 main .doctor-section p,
 main .doctor-section h1 {
   text-align: center;
@@ -1653,8 +1666,7 @@ main .doctor-section .card .card-body {
 main .doctor-section .card .card-body img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   aspect-ratio: 4/3;
   border-radius: 9px 0 0 9px;
 }
@@ -1704,7 +1716,7 @@ main .doctor-section .card .card-body .doctorInfo .doctor-contact a svg {
   stroke-width: 0.8;
 }
 main .find-a-doc-section {
-  padding-bottom: 50px;
+  padding: 50px 0;
 }
 main .find-a-doc-section h1,
 main .find-a-doc-section p {
@@ -1796,6 +1808,9 @@ main .find-a-doc-section .findDocform input[type=submit]:hover {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 0 6px #37b24d;
 }
+main .section-testimonial {
+  padding: 50px 0;
+}
 main .section-testimonial h1,
 main .section-testimonial p {
   text-align: center;
@@ -1869,8 +1884,7 @@ main .section-testimonial .card .card-body .circle-container .img-wrapper {
 main .section-testimonial .card .card-body .circle-container .img-wrapper img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 main .section-testimonial .card .card-body h4 {
   font-size: 24px;
@@ -1908,6 +1922,9 @@ main .section-testimonial .swiper-pagination .swiper-pagination-bullet.swiper-pa
   background-color: #37b24d;
   width: 40px;
   height: 40px;
+}
+main .blog-section {
+  padding: 50px 0;
 }
 main .blog-section h1,
 main .blog-section p {
@@ -1969,8 +1986,7 @@ main .blog-section .card .card-footer .post-author img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 2px solid #ddd;
 }
 main .blog-section .card .card-footer .post-author h6 {
@@ -2055,8 +2071,7 @@ main .blog-section .blog-card .blog-card-content {
 main .blog-section .blog-card .card-img-top {
   width: 100%;
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 20px 20px 0 0;
   display: block;
 }
@@ -2081,7 +2096,6 @@ main .blog-section .blog-card .blog-pill {
   background: #e5f5eb;
   border-radius: 999px;
   padding: 0.5rem 1rem;
-  width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 10px;
 }
@@ -2142,7 +2156,7 @@ main .blog-section .blog-card .card-footer {
 }
 
 #footer .footer-section {
-  padding: 90px 0 50px 0;
+  padding: 50px 0;
 }
 #footer .footer-section p {
   margin: 10px 0;
@@ -2407,7 +2421,6 @@ main .blog-section .blog-card .card-footer {
     height: 148.2px;
   }
   main .appointment-form-section .btn-outline {
-    width: -moz-max-content;
     width: max-content;
   }
 }
@@ -2476,7 +2489,6 @@ main .blog-section .blog-card .card-footer {
     display: none;
   }
   main .appointment-form-section .btn-outline {
-    width: -moz-max-content;
     width: max-content;
   }
   main .services-section .flip .card {
@@ -2615,8 +2627,7 @@ main .blog-section .blog-card .card-footer {
   }
   main .blog-section .card .card-img-top {
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     border-radius: 9px 0 0 9px;
   }
   main .blog-section .card .card-body p {
@@ -2687,8 +2698,7 @@ main .blog-section .blog-card .card-footer {
   }
   main .doctor-section .card .card-body img {
     border-radius: 9px 9px 0 0;
-    -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
 }
 @media (max-width: 767.98px) {
@@ -2786,8 +2796,7 @@ main .blog-section .blog-card .card-footer {
   }
   main .blog-section .card .card-img-top {
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     border-radius: 9px 0 0 9px;
   }
   main .blog-section .card .card-body p {
@@ -2805,7 +2814,6 @@ main .blog-section .blog-card .card-footer {
     text-align: center;
   }
   main .appointment-form-section .btn-outline {
-    width: -moz-max-content;
     width: max-content;
   }
   main .section-pricing .container:before {
@@ -2848,8 +2856,7 @@ main .blog-section .blog-card .card-footer {
   main .blog-section .blog-card .card-img-top {
     width: 100%;
     height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     border-radius: 0;
     display: block;
   }
@@ -2874,7 +2881,6 @@ main .blog-section .blog-card .card-footer {
     background: #e5f5eb;
     border-radius: 999px;
     padding: 0.5rem 1rem;
-    width: -moz-fit-content;
     width: fit-content;
     margin-bottom: 10px;
   }
@@ -2926,8 +2932,7 @@ main .blog-section .blog-card .card-footer {
   }
   main .doctor-section .card .card-body img {
     border-radius: 9px 9px 0 0;
-    -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
   main .section-health {
     padding: 50px 0 50px 0;
@@ -3167,4 +3172,4 @@ main .blog-section .blog-card .card-footer {
   main .section-health .header-swiper {
     display: none;
   }
-}/*# sourceMappingURL=style.css.map */
+}
